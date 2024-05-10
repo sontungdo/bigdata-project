@@ -15,13 +15,14 @@ spark = SparkSession.builder \
 spark.sparkContext.setLogLevel('ERROR')
 
 # Read the input data from system arguments
-# input_dir = sys.argv[1]
-# train = spark.read.csv(input_dir + "/train.csv", header=True, inferSchema=True, sep=",", quote='"', escape='"', multiLine=True)
-# test = spark.read.csv(input_dir + "/test.csv", header=True, inferSchema=True, sep=",", quote='"', escape='"', multiLine=True)
+input_dir = sys.argv[1]
+train = spark.read.csv(input_dir + "/train.csv", header=True, inferSchema=True, sep=",", quote='"', escape='"', multiLine=True)
+test = spark.read.csv(input_dir + "/test.csv", header=True, inferSchema=True, sep=",", quote='"', escape='"', multiLine=True)
 
-input_dir = "../../data-comment"
-train = spark.read.csv(input_dir + "/train_small.csv", header=True, inferSchema=True, sep=",", quote='"', escape='"', multiLine=True)
-test = spark.read.csv(input_dir + "/test_small.csv", header=True, inferSchema=True, sep=",", quote='"', escape='"', multiLine=True)
+# Local test
+# input_dir = "../../data-comment"
+# train = spark.read.csv(input_dir + "/train_small.csv", header=True, inferSchema=True, sep=",", quote='"', escape='"', multiLine=True)
+# test = spark.read.csv(input_dir + "/test_small.csv", header=True, inferSchema=True, sep=",", quote='"', escape='"', multiLine=True)
 
 out_cols = [col for col in train.columns if col not in ["id", "comment_text"]]
 
