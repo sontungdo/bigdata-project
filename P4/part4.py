@@ -43,13 +43,13 @@ train_data = pipeline.fit(train_data).transform(train_data)
 test_data = pipeline.fit(test_data).transform(test_data)
 
 # Create a random forest classifier
-rf = RandomForestClassifier(labelCol="label", featuresCol="features", numTrees=100)
+rf = RandomForestClassifier(labelCol="label", featuresCol="features", numTrees=100, maxBins=50)
 
 # Train the random forest model
 rf_model = rf.fit(train_data)
 
 # Create a decision tree classifier
-dt = DecisionTreeClassifier(labelCol="label", featuresCol="features")
+dt = DecisionTreeClassifier(labelCol="label", featuresCol="features", maxBins=50)
 
 # Train the decision tree model
 dt_model = dt.fit(train_data)
