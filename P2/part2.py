@@ -4,7 +4,7 @@ from pyspark.ml.feature import VectorAssembler
 from pyspark.ml.classification import LogisticRegression
 from pyspark.ml.evaluation import BinaryClassificationEvaluator
 from pyspark.sql.functions import col, when, lit
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 
 # Create a SparkSession
 spark = SparkSession.builder \
