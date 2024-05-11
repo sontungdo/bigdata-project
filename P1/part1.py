@@ -66,3 +66,6 @@ for col in out_cols:
 
 # Save the test results
 test_res.coalesce(1).write.csv('spark_lr_results.csv', mode='overwrite', header=True)
+
+# Stop the SparkSession
+spark.stop()

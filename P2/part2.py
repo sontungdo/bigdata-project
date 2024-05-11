@@ -68,3 +68,6 @@ print("Specificity:", specificity)
 
 auc = evaluator.evaluate(predictions)
 print("AUC Score:", auc)
+
+# Stop the SparkSession
+spark.stop()
